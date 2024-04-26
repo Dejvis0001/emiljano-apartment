@@ -64,7 +64,7 @@
                             <a href="about.html" class="nav-link"><img src="assets/icon/GBR.png" width="23px"></a>
                         </li>
                     </ul>
-                    <div class="mbr10"><a href="about.html" class="btn-one">Book
+                    <div class="mbr10"><a href="contact.html" class="btn-one">Book
                             Now<span></span></a></div>
                 </div>
             </div>
@@ -88,9 +88,9 @@
                     <div class="col-md-3 about-right">
                         <img src="assets/image/28.jpg" class="img-fluid fadeinright active-right" alt="">
                     </div>
-                    <div class="col-md-5 ps-5 pt-5 align-self-center fadeinleft active-left">
+                    <div class="col-md-5 ps-5 pt-5 align-self-center fadeinleft active-left lmdis">
                         <h6 style="font-size: 15px;color: #aa8b5f;">This is our guests' favourite part of .</h6>
-                        <h2 class=" display-4">Bringing people together all over the world.</h2>
+                        <h3 class="prt40">Bringing people together all over the world.</h3>
                         <p>Set in Sarandë, 600 metres from Sarande Main Beach and 1 km from Saranda City Beach,
                             Emiljano Apartment offers air conditioning. Among the facilities at this property are
                             private check-in and check-out and bicycle parking, along with free WiFi throughout the
@@ -401,6 +401,14 @@
             </div>
         </section>
         <!-- End Testimonials -->
+        <!--Jumbotroon-->
+        <section class="main-bg d-flex flex-column justify-content-center align-items-center text-center bg-images"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.625), rgba(0, 0, 0, 0.7)), url('assets/image/24.jpg') center/cover no-repeat fixed;height: 40vh;">
+            <h1 style="color: #f4ac45; margin-bottom: 30px;text-align: center;">
+                "Experience Comfort, Stay with Us."
+            </h1><br>
+        </section>
+        <!--End Jumbotroon-->
         <!--Footer-->
         <section id="footer" style="background-color:#000000;padding-bottom: 0 !important;" class="pt-0">
             <footer class="text-white">
@@ -435,11 +443,8 @@
                                 <li><a href="about.html">About</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
-                            <div style="padding-top: 20px;">
-                                <button>
-                                    <a href="about.html" class="btn-two">Book
-                                        Now<span></span></a> </button>
-                            </div>
+                            <div style="padding-top: 20px;"><a href="contact.html" class="btn-two">Book
+                                Now<span></span></a></div>
                         </div>
                         <div class="col-sm-12 col-md-1 col-lg-3 col-xl-3 align-self-start footer-location">
                             <h5 class="text-uppercase fw-bold mb-4" style="color: #FFFFFF;">Location :</h5>
@@ -475,32 +480,25 @@
     <!--My Script-->
     <script src="main.js"></script>
     <script>
-        const slideshowContainer = document.querySelector('.slideshow-container');
-        let slides = document.querySelectorAll('.slide');
-        let currentIndex = 0;
-        const slideWidth = slides[0].clientWidth;
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            slideshowContainer.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-        }, 3000); // Change slide every 3 seconds
-    </script>
-    <script>
         $(document).ready(function () {
-            $('#testimonial-carousel').owlCarousel({
-                items: 3,        // Set the number of items to display at a time
-                loop: true,      // Enable infinite looping
-                autoplay: true,  // Enable autoplay
-                margin: 20,      // Set the margin between items
-                dots: true,      // Enable indicators (dots)
+            // Initialize Owl Carousel with autoplay
+            $('.testimonials-owl').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000, // Change slide every 5 seconds
+                autoplayHoverPause: false, // Pause autoplay on mouse hover
                 responsive: {
                     0: {
-                        items: 1 // Display 1 item on screens smaller than 768px
+                        items: 1
                     },
-                    768: {
-                        items: 2 // Display 2 items on screens between 768px and 992px
+                    600: {
+                        items: 2
                     },
-                    992: {
-                        items: 3 // Display 3 items on screens larger than 992px
+                    1000: {
+                        items: 3
                     }
                 }
             });
